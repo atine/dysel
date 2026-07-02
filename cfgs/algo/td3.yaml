@@ -1,0 +1,26 @@
+defaults:
+  - _self_
+
+
+algo_name: 'td3'
+algo_tags: ['td3']
+
+
+agent:
+  _target_: src.agents.td3.learner_td3.TD3Learner
+  seed: ${seed}
+  state_dim: ???
+  action_dim: ???
+  discount: ${discount}
+  tau: ${tau}
+  actor_lr: 3e-4
+  critic_lr: 3e-4
+  hidden_dims: ${hidden_dims}
+  num_parallel_seeds: ${num_parallel_seeds}
+  # td3
+  td3_exploration_noise: 0.1
+  td3_policy_noise: 0.2
+  td3_policy_noise_clip: 0.5
+  # other tricks
+  policy_update_freq: 2
+  num_updates: ${agent_updates_per_step}

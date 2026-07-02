@@ -1,0 +1,7 @@
+defaults:
+  - _self_
+
+
+task_group: dmc
+task_name: cheetah-run
+read_task_name: dmc_cheetah_run

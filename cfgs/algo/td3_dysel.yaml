@@ -1,0 +1,32 @@
+defaults:
+  - _self_
+
+
+algo_name: 'td3_dysel'
+algo_tags: ['td3', 'dysel']
+
+
+agent:
+  _target_: src.agents.td3_dysel.learner_td3_dysel.TD3DyselLearner
+  seed: ${seed}
+  state_dim: ???
+  action_dim: ???
+  discount: ${discount}
+  tau: ${tau}
+  actor_lr: 3e-4
+  critic_lr: 3e-4
+  hidden_dims: ${hidden_dims}
+  num_parallel_seeds: ${num_parallel_seeds}
+  # td3
+  td3_exploration_noise: 0.1
+  td3_policy_noise: 0.2
+  td3_policy_noise_clip: 0.5
+  # dysel
+  init_min_value: -10.0
+  init_max_value: 10.0
+  n_bins: 128
+  bounds_weight: 1.0
+  # other tricks
+  policy_update_freq: 2
+  num_updates: ${agent_updates_per_step}
+  layernorm: False

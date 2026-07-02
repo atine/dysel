@@ -1,0 +1,20 @@
+# cache
+*.pyc
+__pycache__
+*.swp
+.python-version
+squash*
+backup/
+uv.lock
+
+
+# logs
+logs/
+slurm_logs/
+.venv
+wandb/
+temp/
+
+
+# tests
+component_tests/

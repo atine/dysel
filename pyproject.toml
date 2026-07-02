@@ -1,0 +1,48 @@
+[project]
+name = ""
+version = "0.0.1"
+description = ""
+readme = "README.md"
+dependencies = [
+    "cython==0.29.37",
+    "dm-control==1.0.34",
+    "flax==0.10.7",
+    "gym==0.23.1",
+    "hydra-core",
+    "imageio[ffmpeg]>=2.37.0",
+    "jax[cuda]==0.6.2",
+    "mujoco==3.3.7",
+    "natsort",
+    "numpy==2.3.4",
+    "optax==0.2.5",
+    "pandas>=2.3.3",
+    "tqdm>=4.67.1",
+    "wandb",
+]
+
+
+[tool.uv]
+
+
+
+[tool.ruff]
+exclude = ["d4rl_ext/"]
+line-length = 79
+indent-width = 4
+
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+docstring-code-format = true
+docstring-code-line-length = 79
+
+[tool.pyrefly]
+project-includes = [
+    "**/*.py*",
+    "**/*.ipynb",
+]
+
+
+[tool.ruff.lint]
+ignore = ["F403"]

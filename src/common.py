@@ -1,0 +1,13 @@
+import collections
+from typing import Any, Dict
+import flax
+
+
+Batch = collections.namedtuple(
+    "Batch",
+    ["observations", "actions", "rewards", "masks", "next_observations"],
+)
+
+
+Params = flax.core.FrozenDict[str, Any]
+InfoDict = Dict[str, float]

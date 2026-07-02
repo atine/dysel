@@ -1,0 +1,44 @@
+defaults:
+  - _self_
+  - algo: td3
+  - task: dmc_cheetahrun
+  - override hydra/hydra_logging: disabled
+  - override hydra/job_logging: disabled
+
+
+supercedes_all_settings: False
+
+
+# RL env settings
+seed: 0
+num_parallel_seeds: 10
+init_collection_steps: 1_0000
+max_timesteps: 3_000_000
+eval_episodes: 20
+
+
+# RL algo settings
+batch_size: 256
+hidden_dims: [256, 256]
+discount: 0.99
+tau: 0.005
+agent_updates_per_step: 1
+resets: False
+resets_freq: 20000
+
+
+# logging settings
+show_stats_freq: 1000
+eval_freq: 10000
+additional: ''
+no_track: False
+no_disc_logging: True
+
+
+# hydra settings
+hydra:
+  run:
+    dir: logs/${task.task_name}/${algo.algo_name}/${now:%Y%m%d}_${now:%H%M%S}${additional}
+  job:
+    chdir: True
+  output_subdir: null

@@ -1,0 +1,7 @@
+defaults:
+  - _self_
+
+
+task_group: dmc
+task_name: humanoid-stand
+read_task_name: dmc_humanoid_stand

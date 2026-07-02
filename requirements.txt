@@ -1,0 +1,18 @@
+# common packages
+cython==0.29.37
+tqdm
+wandb
+hydra_core
+imageio[ffmpeg]
+natsort
+
+
+# Deep learning packages
+jax[cuda]==0.6.2
+flax==0.10.7
+
+
+# RL packages
+dm-control==1.0.34
+gym==0.23.1
+mujoco==3.3.7
